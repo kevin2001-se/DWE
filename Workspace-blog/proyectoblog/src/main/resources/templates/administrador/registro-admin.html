@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="administrador/layout">
+
+<body>
+	<div layout:fragment="content">
+		<div class="page-breadcrumb">
+			<div class="row">
+				<div class="col-12 d-flex no-block align-items-center">
+					<h4 class="page-title">Administrador</h4>
+					<div class="ms-auto text-end">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Administrador</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			
+			 <div class="row">
+
+                    <div class="card m-auto"  style="max-width: 700px;">
+                        <div class="card-body">
+
+                            <div class="row">
+                                
+                                <div class="container col-12">
+
+                                    <form  th:action="@{/admin/grabar}" method="POST">
+                                        
+                                        <div class="row p-0">
+
+                                            <div class="col-12">
+                                                <a href="administradores.html" class="btn btn-info mb-2"><i class="mdi mdi-keyboard-return"></i> Regresar a Listado</a>
+                                            </div>
+											
+                                            <div class="col-12 d-flex flex-wrap">
+                                            	<div class="col-12 px-1">
+                                                    <div class="form-group">
+                                                        <label for="nombreAd">Nombres</label>
+                                                        <input id="nombreAd" class="form-control" type="text" name="" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 px-1">
+                                                    <div class="form-group">
+                                                        <label for="apellidoAd">Apellidos</label>
+                                                        <input id="apellidoAd" class="form-control" type="text" name="" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group px-1">
+                                                    <label for="correoAd">Correo Electronico</label>
+                                                    <input id="correoAd" class="form-control" type="email" name="">
+                                                </div> 
+                                            </div>
+
+                                            <div class="col-12 d-flex flex-wrap">
+                                                <div class="col-12 col-sm-6 px-1">
+                                                    <div class="form-group">
+                                                        <label for="contraAd">Contraseña</label>
+                                                        <input id="contraAd" class="form-control" type="password" name="">
+                                                    </div> 
+                                                </div>
+                                                <div class="col-12 col-sm-6 px-1">
+                                                    <div class="form-group">
+                                                        <label for="CcontraAd">Confirmar Contraseña</label>
+                                                        <input id="CcontraAd" class="form-control" type="password" name="">
+                                                    </div> 
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary">Registrar Administrador</button>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="administrador/layout">
+
+<body>
+	<div layout:fragment="content">
+		<div class="page-breadcrumb">
+			<div class="row">
+				<div class="col-12 d-flex no-block align-items-center">
+					<h4 class="page-title">Administrador</h4>
+					<div class="ms-auto text-end">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Administrador</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+
+               <div class="row">
+
+                    <!--=====================================================
+                    TABLA ADMINISTRADOR
+                    ======================================================-->
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="row">
+                                
+                                <div class="col-12">
+                                    <a th:href="@{/admin/registroAdmin}" class="btn btn-info mb-3"><i class="mdi mdi-plus"></i> Agregar</a>
+                                </div>
+                                <hr>
+                                <div class="col-12">
+                                    <table id="adminTB" class="table display responsive nowrap table-striped" width="100%">
+                                        <thead class="thead-dark">
+                                            <tr class="bg-info">
+                                                <th class="text-light">Codigo</th>
+                                                <th class="text-light">Nombre</th>
+                                                <th class="text-light">Apellido</th>
+                                                <th class="text-light">Correo</th>
+                                                <th class="text-light">Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><!--Foreach-->
+                                                <td><!--Codigo--></td>
+                                                <td><!--Codigo--></td>
+                                                <td><!--Codigo--></td>
+                                                <td><!--Codigo--></td>
+                                                <td class="d-flex">
+                                                    <form action="" class="mr-1">
+                                                        <input type="hidden" name="" value="">
+                                                        <button type="submit" class="btn btn-primary"><i class="mdi mdi-grease-pencil"></i></button>
+                                                    </form>
+                                                    <form action="">
+                                                        <input type="hidden" name="" value="">
+                                                        <button type="submit" class="btn btn-danger"><i class="mdi mdi-delete-empty"></i></button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+		</div>
+	</div>
+</body>
+
+</html>
