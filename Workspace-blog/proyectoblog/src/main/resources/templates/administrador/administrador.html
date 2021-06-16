@@ -31,7 +31,6 @@
                         <div class="card-body">
 
                             <div class="row">
-                                
                                 <div class="col-12">
                                     <a th:href="@{/admin/registroAdmin}" class="btn btn-info mb-3"><i class="mdi mdi-plus"></i> Agregar</a>
                                 </div>
@@ -48,20 +47,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr><!--Foreach-->
-                                                <td><!--Codigo--></td>
-                                                <td><!--Codigo--></td>
-                                                <td><!--Codigo--></td>
-                                                <td><!--Codigo--></td>
+                                            <tr th:each="admin:${administrador}"><!--Foreach-->
+                                                <td class="id_admin" th:text="${admin.codigo}"></td>
+                                                <td th:text="${admin.nombre_ad}"><!--Codigo--></td>
+                                                <td th:text="${admin.apellido_ad}"><!--Codigo--></td>
+                                                <td th:text="${admin.correo_ad}"><!--Codigo--></td>
                                                 <td class="d-flex">
-                                                    <form action="" class="mr-1">
-                                                        <input type="hidden" name="" value="">
-                                                        <button type="submit" class="btn btn-primary"><i class="mdi mdi-grease-pencil"></i></button>
-                                                    </form>
-                                                    <form action="">
-                                                        <input type="hidden" name="" value="">
-                                                        <button type="submit" class="btn btn-danger"><i class="mdi mdi-delete-empty"></i></button>
-                                                    </form>
+													<a href="" class="btn btn-primary"><i class="mdi mdi-grease-pencil"></i></a>
+                                                    <a class="btn btn-danger eliminarAdmin">
+                                                    	<i class="mdi mdi-delete-empty"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -74,7 +69,15 @@
                     </div>
 
                 </div>
-
+				<script th:if="${success_registro != null}">
+					document.addEventListener('DOMContentLoaded', () => {
+						Swal.fire({
+							icon: 'success',
+							title: 'Ok',
+							text: 'Se Registro Correctamente el Administrador'
+						})
+					})
+				</script>
 
 		</div>
 	</div>
