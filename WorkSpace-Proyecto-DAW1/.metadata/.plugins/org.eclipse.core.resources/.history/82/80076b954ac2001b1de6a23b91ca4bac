@@ -1,0 +1,16 @@
+package org.CiberPhone.model;
+
+public class categoria {
+
+	private int codigo;
+	private String nombre;
+
+	
+	/*CREATE TABLE `tb_categoria` (
+  `id_catepro` int(11) NOT NULL,
+  `nom_cate` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;*/
+	
+	
+	
+}
