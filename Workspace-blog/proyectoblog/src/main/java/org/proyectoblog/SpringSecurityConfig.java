@@ -15,18 +15,25 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	
-	
-	
+
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/", "/css/**", "/img/**", "/js/**", "/admin").permitAll()
-		/*.antMatchers("admin/categoria").hasAnyRole("USER")*/
-		.antMatchers("admin/administrador").hasAnyRole("USER")
-		/*.antMatchers("admin/registroAdmin").hasAnyRole("USER")*/
-		/*.antMatchers("admin/grabarAdmin").hasAnyRole("USER")*/
-		/*.antMatchers("admin/eliminarAdmin/").hasAnyRole("USER")*/
-		.anyRequest().authenticated();
+		.antMatchers("admin/categoria").hasAnyRole("ADMIN")
+		.antMatchers("admin/administrador").hasAnyRole("ADMIN")
+		.antMatchers("admin/registroAdmin").hasAnyRole("ADMIN")
+		.antMatchers("admin/grabarAdmin").hasAnyRole("ADMIN")
+		.antMatchers("admin/eliminarAdmin/").hasAnyRole("ADMIN")
+		.anyRequest().authenticated()
+		.and()
+		   .formLogin().loginPage("/login")
+		    .permitAll()
+		.and()
+		.logout().permitAll();
+		
 	}
+	
 	
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
