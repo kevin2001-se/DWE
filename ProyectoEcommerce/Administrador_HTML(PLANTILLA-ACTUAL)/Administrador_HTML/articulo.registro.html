@@ -15,6 +15,7 @@
     <title>Admin Phone</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="dist/img/favicon.png">
+   
     <!-- Custom CSS -->
     <link href="dist/css/icheck-bootstrap.min.css" rel="stylesheet">
 
@@ -30,8 +31,10 @@
 
     <link href="dist/css/toastr/toastr.min.css" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -166,12 +169,12 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Registrar Administrador</h4>
+                        <h4 class="page-title">Registrar Articulo</h4>
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Administradores</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Articulo</li>
                                 </ol>
                             </nav>
                         </div>
@@ -183,14 +186,60 @@
 
                 <div class="row">
 
-                    <div class="card m-auto"  style="max-width: 700px;">
+                    <div class="card m-auto" >
                         <div class="card-body">
 
                             <div class="row">
                                 
-                                <div class="container col-12">
-
+                                <div class="container col-12 contenedor-formulario">
                                     
+                                    <form class="row" enctype="multipart/form-data" id="form_register">
+                                        <div class="col-lg-6">
+                                            <div class="form-group ">
+                                                <label for="autor_articulo">Autor Articulo</label>
+                                                <input id="autor_articulo" class="form-control" type="text" name="autor_articulo">
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-lg-6">
+                                            <div class="form-group ">
+                                                <label for="titulo_articulo">Título Articulo</label>
+                                                <input id="titulo_articulo" class="form-control" type="text" name="titulo_articulo">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group ">
+                                                <label for="resena_articulo">Reseña Articulo</label>
+                                                <textarea name="resena_articulo" id="resena_articulo" class="form-control" cols="30" rows="2"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group ">
+                                                <label for="fecha_articulo">Fecha Articulo</label>
+                                                <input id="fecha_articulo" class="form-control" type="date" name="fecha_articulo">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group ">
+                                                <label for="portada_articulo">Portada Articulo</label>
+                                                <input id="portada_articulo" class="form-control" type="file" name="portada_articulo">
+                                            </div>
+                                            <div class="w-100 text-center">
+                                                <img src="dist/img/imagen.gif" class="img-fluid portada_articulo" alt="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-group ">
+                                                <label for="desp_articulo">Descripción Articulo</label>
+                                                <textarea name="desp_articulo" id="desp_articulo" cols="30"  class="form-control" rows="10"></textarea>
+                                            </div>
+                                        </div>
+
+                                    </form>
 
                                 </div>
 
@@ -218,7 +267,7 @@
     <!-- Bootstrap tether Core JavaScript -->
     <script src="dist/js/lib/bootstrap.bundle.min.js"></script>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <script src="dist/js/lib/perfect-scrollbar.jquery.min.js"></script>
 
@@ -241,6 +290,8 @@
     <script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
 
     <script src="dist/js/inputFloat/materialize-inputs.jquery.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
     <script src="dist/js/main.js"></script>
 
