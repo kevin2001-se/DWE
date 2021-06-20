@@ -1,0 +1,140 @@
+.cuenta-body{
+    background: radial-gradient(circle at 39% 47%, rgba(107,107,107,0.08) 0%, rgba(107,107,107,0.08) 33.333%, rgba(72,72,72,0.08) 33.333%, rgba(72,72,72,0.08) 66.666%, rgba(36,36,36,0.08) 66.666%, rgba(36,36,36,0.08) 99.999%),radial-gradient(circle at 53% 74%, rgba(182,182,182,0.08) 0%, rgba(182,182,182,0.08) 33.333%, rgba(202,202,202,0.08) 33.333%, rgba(202,202,202,0.08) 66.666%, rgba(221,221,221,0.08) 66.666%, rgba(221,221,221,0.08) 99.999%),radial-gradient(circle at 14% 98%, rgba(184,184,184,0.08) 0%, rgba(184,184,184,0.08) 33.333%, rgba(96,96,96,0.08) 33.333%, rgba(96,96,96,0.08) 66.666%, rgba(7,7,7,0.08) 66.666%, rgba(7,7,7,0.08) 99.999%),linear-gradient(45deg, #f79f9b, #0f4069);
+}
+
+
+.cuenta-body .auth-page {
+    max-width: 460px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.cuenta-body .auth-card {
+    border-radius: 20px;
+}
+
+.cuenta-body .auth-card .auth-logo-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -25px;
+    text-align: center;
+}
+
+.cuenta-body .auth-card .auth-logo-text {
+    font-family: "Roboto",sans-serif;
+}
+
+.cuenta-body .auth-card .auth-logo-text h4 {
+    font-weight: 600;
+    color: #303e67;
+    font-size: 22px;
+}
+
+.cuenta-body .auth-card .auth-logo-box .auth-logo {
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 4px;
+    -webkit-box-shadow: 0px 0px 0px 2.25px #f1f5fa;
+    box-shadow: 0px 0px 0px 2.25px #f1f5fa;
+}
+
+.cuenta-body label {
+    font-weight: 400;
+    color: #656d9a;
+    font-size: 13px;
+}
+
+.cuenta-body .input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}
+
+.cuenta-body .auth-form-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #f1f5fa;
+    text-align: center;
+    line-height: 34px;
+    border-radius: 50%;
+    position: absolute;
+    right: 3px;
+    z-index: 100;
+    top: 3px;
+    color: #9ba7ca;
+}
+
+.cuenta-body .input-group>.form-control:not(:first-child), .auth-form .input-group>.custom-select:not(:first-child) {
+    border-radius: 30px !important;
+}
+
+.cuenta-body .auth-form .form-control {
+    border-radius: 30px;
+    padding-right: 40px;
+}
+
+.cuenta-body .input-group>.form-control, .input-group>.form-control-plaintext, .input-group>.custom-select, .input-group>.custom-file {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.cuenta-body .form-control {
+    border: 1px solid #e8ebf3;
+    border-radius: .25rem;
+    border-bottom: 1px solid #e8ebf3;
+    -webkit-transition: border-color 0s ease-out;
+    transition: border-color 0s ease-out;
+    background-color: #fff;
+}
+
+.cuenta-body .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.8em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: .845rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #303e67;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e8ebf3;
+    border-radius: .25rem;
+    -webkit-transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+}
+
+.btn-gradient-primary {
+    background: linear-gradient(
+14deg
+, #1F262D 0%, #3c3f42);
+    color: #fff;
+    -webkit-box-shadow: 0 7px 14px 0 rgb(80 110 228 / 50%);
+    box-shadow: 0 7px 14px 0 rgb(80 110 228 / 50%);
+    border: none;
+
+    width: 100%;
+    padding: 1em;
+}
+
+.cuenta-body .btn-round {
+    border-radius: 30px;
+}
+
+.btn-gradient-primary:hover{
+    color: #fff;
+}
