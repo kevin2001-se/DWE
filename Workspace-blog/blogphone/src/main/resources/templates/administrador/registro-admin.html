@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="administrador/layout">
+
+<body>
+	<div layout:fragment="content">
+		<div class="page-breadcrumb">
+			<div class="row">
+				<div class="col-12 d-flex no-block align-items-center">
+					<h4 class="page-title">Administrador</h4>
+					<div class="ms-auto text-end">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Administrador</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			
+			 <div class="row">
+
+                    <div class="card m-auto"  style="max-width: 700px;">
+                        <div class="card-body">
+
+                            <div class="row">
+                                
+                                <div class="container col-12 contenedor-formulario">
+
+                                    <form  th:action="@{/admin/grabarAdmin}" method="POST" th:object="${Admin}" id="form_register">
+                                        
+                                        <div class="row p-0">
+
+                                            <div class="col-12">
+                                                <a th:href="@{/admin/administrador}" class="btn btn-info mb-2"><i class="far fa-hand-point-left"></i> Regresar a Listado</a>
+                                            </div>
+											
+                                            <div class="col-12 d-flex flex-wrap">
+                                            	<div class="col-12 px-1">
+                                                    <div class="form-group">
+                                                        <label for="nombreAd">Nombres</label>
+                                                        <input th:field="*{nombre}" id="nombreAd" class="form-control" type="text" name="" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 px-1">
+                                                    <div class="form-group">
+                                                        <label for="apellidoAd">Apellidos</label>
+                                                        <input th:field="*{apellido}" id="apellidoAd" class="form-control" type="text" name="" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group px-1">
+                                                    <label for="correoAd">Usuario</label>
+                                                    <input th:field="*{username}" id="userAd" class="form-control" type="text" name="" >
+                                                </div> 
+                                            </div>
+
+                                            <div class="col-12 d-flex flex-wrap">
+                                                <div class="col-12 col-sm-6 px-1">
+                                                    <div class="form-group">
+                                                        <label for="contraAd">Contraseña</label>
+                                                        <input th:field="*{password}" id="contraAd" class="form-control" type="password" name="" >
+                                                    </div> 
+                                                </div>
+                                                <div class="col-12 col-sm-6 px-1">
+                                                    <div class="form-group">
+                                                        <label for="CcontraAd">Confirmar Contraseña</label>
+                                                        <input id="CcontraAd" class="form-control" type="password" name="" >
+                                                    </div> 
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary" id="register_btn">Registrar Administrador</button>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                    <script>
+
+				        const btn = document.querySelector("#form_register");
+				
+				        class UI{
+				            mensajesFormulario(mensaje, color){
+				
+				                console.log(mensaje, color);
+				                const alert = document.createElement('div');
+				                alert.classList.add('p-3','mb-2','text-white','text-uppercase');
+				
+				                if (color === 'danger') {
+				                    alert.classList.add('bg-danger');
+				                }else if (color === 'warnnig') {
+				                    alert.classList.add('bg-warnnig');
+				                }
+				
+				                const menssage = document.createElement('h5');
+				                menssage.classList.add('mb-0');
+				                menssage.textContent = mensaje;
+				                alert.appendChild(menssage);
+				                document.querySelector(".contenedor-formulario").insertBefore(alert,btn);
+				
+				                setTimeout(() => {
+				                    alert.remove();
+				                }, 5000);
+				            }
+				        }
+				
+				        const ui = new UI();
+				
+				        btn.addEventListener("submit", function (e) {
+				            e.preventDefault();
+				            const nombre = document.querySelector("#nombreAd").value;
+				            const apellido = document.querySelector("#apellidoAd").value;
+				            const userAd = document.querySelector("#userAd").value;
+				            const pass = document.querySelector('#contraAd').value;
+				            const passC = document.querySelector('#CcontraAd').value;
+				
+				            if(nombre === '' || apellido === '' || userAd === '' || pass === '' || passC === ''){
+				                ui.mensajesFormulario('campos vacios', 'danger');
+				            }else{
+				                if (pass !== passC) {
+				                    ui.mensajesFormulario('Las Contraseñas son Distintas', 'danger');
+				                    return false;
+				                }else{
+				                    document.querySelector("#form_register").submit();  
+				                }
+				            }
+				        })
+				    </script>
+
+		</div>
+	</div>
+</body>
+
+</html>
