@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="administrador/layout">
+
+<body>
+	<div layout:fragment="content">
+		<div class="page-breadcrumb">
+			<div class="row">
+				<div class="col-12 d-flex no-block align-items-center">
+					<h4 class="page-title">Opiniones</h4>
+					<div class="ms-auto text-end">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Opiniones</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+
+			<div class="row">
+
+				<div class="card">
+					<div class="card-body">
+
+						<div class="row">
+
+							<div class="col-12">
+								<a th:href="@{/admin/registroCategoria}" class="btn btn-info mb-3"><i class="fas fa-plus"></i>
+									Agregar</a>
+							</div>
+							<hr>
+							<div class="col-12">
+								<table id="adminTB" class="table display responsive nowrap table-striped" width="100%">
+									<thead class="thead-dark">
+										<tr class="bg-info">
+											<th class="text-light">Codigo</th>
+											<th class="text-light">Nombre Categoria</th>
+											<th class="text-light">Acción</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="cate:${categoriaPost}">
+											<!--Foreach-->
+											<td class="id_cate" th:text="${cate.codigo}">
+												<!--Codigo-->
+											</td>
+											<td th:text="${cate.categorias}">
+												<!--Codigo-->
+											</td>
+											<td class="d-flex">
+												<a th:href="@{/admin/actualizarCategoria/}+${cate.codigo}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
+												<a class="btn btn-danger eliminarCate">
+                                                    	<i class="fas fa-trash"></i>
+                                                </a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+						<script th:if="${success_registro != null}">
+							document.addEventListener('DOMContentLoaded', () => {
+								Swal.fire({
+									icon: 'success',
+									title: 'Ok',
+									text: 'Se Registro Correctamente la Categoria'
+								})
+							})
+						</script>
+						<script th:if="${success_update != null}">
+							document.addEventListener('DOMContentLoaded', () => {
+								Swal.fire({
+									icon: 'success',
+									title: 'Ok',
+									text: 'Se Actualizo Correctamente la Categoria'
+								})
+							})
+						</script>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
